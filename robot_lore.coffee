@@ -3,7 +3,7 @@ module.exports = (robot) ->
   # From: Hal (2001, A Space Odyssey)
   # http://www.imdb.com/title/tt0062622/quotes
   # Make more flexible
-  robot.respond /how are you(\?)?/i, (msg) ->
+  robot.respond /(how are you|sup boy)(\?)?/i, (msg) ->
     msg.reply "I'm completely operational and all my circuits are functioning normally"
   robot.respond /Open the pod bay doors/i, (msg) ->
     msg.reply "I'm sorry. I'm afraid I can't do that."
