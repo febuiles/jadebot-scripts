@@ -1,6 +1,6 @@
 # Makes hubot act as Tony Montana.
 #
-# anything containing <tony|scarface|montana> - Display a Tony's quote.
+# anything containing <tony|scarface|montana> - Displays a Tony's quote.
 #
 tonyQuotes = [
   "You don't got nothing to do with your life. Why don't you get a job? Work with lepers. Blind kids. Anything's gotta be better than lying around all day waiting for me to fuck you.",
