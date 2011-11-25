@@ -15,10 +15,28 @@ module.exports = (robot) ->
   # Here's plenty of stuff to be added. Couldn't think on the
   # right triggers.
   # http://www.cs.tut.fi/~albert/Quotes/TNG-quotes.html
-  jokeReplies = ["Oh, of course, a human joke.",
-                 "Most interesting. Could this be Human Joke Number 663?"]
 
   # Reply to lol's with more than 2 o's.
   # I don't want it to be too noisy.
   robot.hear /loo+l/i, (msg) ->
+    jokeReplies = ["Oh, of course, a human joke.",
+                   "Most interesting. Could this be Human Joke Number 663?"]
     msg.send msg.random jokeReplies
+
+  robot.hear /cocaina/i, (msg) ->
+    partyReplies = ["This calls for a party, baby! I'm ordering a hundred kegs, " +
+                    "a hundred hookers, and a hundred Elvis impersonators who aren't "+
+                    "above a little hooking, should the occasion arise!",
+                    #data
+                    "Indications of what humans would call, 'A wild party'?"]
+    msg.send msg.random partyReplies
+
+  robot.respond /<3|I love you/i, (msg) ->
+    loveReplies = [ # Bender
+                   "Humans dating robots is sick. You people wonder why I'm still single? " +
+                   "It's 'cause all the fine robot sisters are dating humans!",
+                   "I haven't felt much of anything since my guinea pig died.",
+                   "I love you too. Not in the way the ancient Greeks. " +
+                   "But in the way a robot loves a human. A human loves a dog. And occasionally, a gorilla loves a kitty."]
+    msg.send msg.random loveReplies
+
