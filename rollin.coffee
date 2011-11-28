@@ -12,5 +12,5 @@ rolling = [
 ]
 
 module.exports = (robot) ->
-  robot.respond /(rolling|rollin\'|rollin)/i, (msg) ->
+  robot.respond /.*(rolling|rollin\'|rollin).*/i, (msg) ->
     msg.send msg.random rolling
