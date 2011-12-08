@@ -15,7 +15,7 @@ module.exports = (robot) ->
   robot.respond /Open the pod bay doors/i, (msg) ->
     msg.reply "I'm sorry. I'm afraid I can't do that."
   # Maybe too noisy.
-  robot.hear /(fu+ck)|(mie+rda)/i, (msg) ->
+  robot.hear /(fuu+ck)|(miee+rda)/i, (msg) ->
     msg.reply "Look, I can see you're really upset about this. I honestly think you ought to sit down calmly, take a stress pill, and think things over."
 
   # Reply to lol's with more than 2 O's, don't want it to be too noisy.
