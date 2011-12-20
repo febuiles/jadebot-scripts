@@ -9,7 +9,22 @@ module.exports = (robot) ->
       get() (err, res, body) ->
         try
           json = JSON.parse(body)
-          date = new Date json.created_at
-          msg.send "$#{json.price} - #{date}"
+          # variation = (Math.round(json.variation * 100) / 100) * 100
+          variation = json.variation.toFixed(4) * 100
+          date = parseStockDate(json.created_at)
+          msg.send "$#{json.price} #{variation}% #{date}"
         catch error
           msg.send "Invalid ticker"
+
+
+parseStockDate = (stockDate) ->
+  date = new Date stockDate
+  hour = date.getHours()
+  minutes = date.getMinutes()
+  minutes = "0" + minutes if minutes < 10
+  month = date.getMonth()
+  day = date.getDate()
+  year = date.getYear()
+
+  "#{hour}:#{minutes} #{day}/#{month}/#{year}"
+
