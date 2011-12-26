@@ -5,7 +5,7 @@
 module.exports = (robot) ->
   robot.respond /yura me (.*)/i, (msg) ->
     ticker = msg.match[1]
-    msg.http("http://yurani.pemberthy.com/stocks/#{ticker}.json").
+    msg.http("http://yurani.pemberthy.com/api/stocks/#{ticker}.json").
       get() (err, res, body) ->
         try
           json = JSON.parse(body)
