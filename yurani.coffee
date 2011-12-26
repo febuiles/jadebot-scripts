@@ -9,8 +9,7 @@ module.exports = (robot) ->
       get() (err, res, body) ->
         try
           json = JSON.parse(body)
-          # variation = (Math.round(json.variation * 100) / 100) * 100
-          variation = json.variation.toFixed(4) * 100
+          variation = (json.variation * 100).toFixed(2)
           date = parseStockDate(json.created_at)
           msg.send "$#{json.price} #{variation}% #{date}"
         catch error
