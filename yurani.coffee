@@ -21,7 +21,7 @@ parseStockDate = (stockDate) ->
   hour = date.getHours()
   minutes = date.getMinutes()
   minutes = "0" + minutes if minutes < 10
-  month = date.getMonth()
+  month = date.getMonth() + 1
   day = date.getDate()
   year = date.getFullYear()
 
